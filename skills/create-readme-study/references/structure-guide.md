@@ -1,24 +1,38 @@
 # README Structure Guide — Study Projects
 
-This is the reference template for the user's personal README style. It merges the general-purpose README advice the user keeps for themselves with the concrete patterns found across their own projects. Treat every section below as a building block, not a mandatory checklist — see "Hard rules" in `SKILL.md`.
+This is the reference template for the user's personal README style. It merges the general-purpose README advice the user keeps for themselves with the concrete patterns found across their own projects. Treat every section below as a building block, not a mandatory checklist — see "Hard rules" in [../SKILL.md](../SKILL.md).
 
 ## Why this style exists
 
 A README is the entry point to a project. For the user's study projects, it serves two audiences at once: other developers who want to understand the project, and recruiters who want to see what the user actually knows how to do. That's why, unlike a typical open-source README, this style always keeps a learning-focused section (Funcionalidades / Detalhamento / Objetivo de Aprendizado) instead of treating the README as pure user documentation.
 
-## Section order by project type
+## Standard section order
 
-| Site (static front-end) | Sistema web (own UI logic) | Sistema CLI / backend |
-|---|---|---|
-| 📌 Sobre | 📌 Sobre | 📌 Sobre |
-| 🚀 Acesse o Projeto | 🚀 Acesse o Projeto | ▶️ Como Executar |
-| 🎨 Design (if there's a Figma/design file) | 💻 Funcionalidades (with `<details>` sumário) | 🎯 Objetivo de Aprendizado |
-| 📱 Mobile (if Mobile First was used) | 📱 Mobile (or an explanation of why there isn't one) | 📋 Detalhamento (with `<details>` sumário: Funcionalidades, Arquitetura, Conceitos Aplicados, Persistência, etc.) |
-| Any extra integration section (e.g. 📝 Mailchimp) | — | 🔮 Próximas Melhorias |
-| 📚 Fontes & Créditos | 🤝 Contribuidores | — |
-| 📃 Licença | 📃 Licença | 📃 Licença |
+There's one default order, used for every project type. What changes from project to project is **which sections fill the "Informações" slot**, not the overall sequence:
 
-Mix and match freely — e.g. a site with a deep technical build can still use a 📋 Detalhamento section instead of (or alongside) 🎨 Design.
+1. 📌 **Sobre**
+2. 🚀 **Acesse o Projeto** (there's a live link/store listing) or ▶️ **Como Executar** (there's an install/run step instead) — occasionally a project needs neither (e.g. a library consumed as a dependency), in which case this slot is skipped.
+3. **Informações** — the technical/learning core. This is a slot, not one fixed section: fill it with whichever of 📋 Detalhamento, 🎨 Design, 📱 Mobile, 💻 Funcionalidades, 🏗️ Arquitetura, or any project-specific integration section (e.g. 📝 Mailchimp) actually applies, in whatever sub-order makes sense for this project. A technically deep project usually wraps this slot in the `<details>` sumário pattern (see below); a simpler one may just need one or two of these sections back to back.
+4. 🎯 **Objetivo de Aprendizado** and/or 📚 **Conceitos/Conhecimentos Aplicados** — what the project was meant to practice, and what was actually applied.
+5. 🔮 **Próximas Melhorias** — only if there's something planned.
+6. 📚 **Fontes & Créditos** — only if third-party assets are used.
+7. 🤝 **Contribuidores** — only if someone else helped.
+8. 📃 **Licença** — always last, always present.
+
+This order is the default, not a rule: skip whatever doesn't apply, and reorder within the "Informações" slot as the project calls for it.
+
+### How "Informações" tends to map to project types
+
+A rough starting point — not a constraint, since any of these can mix:
+
+| Project type | Typical "Informações" sections |
+|---|---|
+| Site | 🎨 Design (Figma/palette), 📱 Mobile (Mobile First evidence), any integration section |
+| Web System | 💻 Funcionalidades (with `<details>` sumário), 📱 Mobile |
+| CLI Tool / API / Backend | 📋 Detalhamento (with `<details>` sumário: Funcionalidades, Arquitetura, Conceitos Aplicados, Persistência, etc.) |
+| Desktop App / Mobile App | 📋 Detalhamento or 💻 Funcionalidades, plus 🎨 Design if there's a UI to show |
+| AI Agent | 📋 Detalhamento (what it does, tools/integrations used, how a request flows through it) |
+| Library/Package | 📋 Detalhamento (API surface, internal design decisions) |
 
 ## Fixed section titles (emoji + id)
 
